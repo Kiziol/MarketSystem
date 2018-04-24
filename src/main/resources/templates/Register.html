@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>注册页面</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <link th:href="@{/image/favicon1.ico}" rel="shortcut icon" type="images/x-icon"/>
+        <link th:href="@{/css/register.css}" rel="stylesheet" type="text/css"/>
+        <script th:src="@{/js/register.js}" type="text/javascript">
+        </script>
+    </meta>
+</head>
+<body class="registerbody">
+<div class="registerbox">
+    <div class="content">
+        <div class="title">
+            <h2>
+                注册
+                <span class="span" id="mistake">
+                        </span>
+                <div class="account">
+                    已有账号，去
+                    <a href="#">
+                        登录
+                    </a>
+                </div>
+            </h2>
+        </div>
+        <form action="#" id="registerform" method="post" name="registerform">
+            <div class="row">
+                <input class="text" id="phone" name="telephone" onblur="checkphone()" placeholder="手机号" required="required" type="text">
+                </input>
+            </div>
+            <div class="row">
+                <input class="text" id="password" name="password" onblur="checkpass()" placeholder="密码" required="required" type="password">
+                </input>
+            </div>
+            <div class="row">
+                <input class="text" id="Rpassword" name="Rpassword" onblur="checkrpass()" placeholder="确认密码" required="required" type="password">
+                </input>
+            </div>
+            <div class="row">
+                <input class="text" id="username" name="name" onblur="checkname()" placeholder="联系人" required="required" type="text">
+                </input>
+            </div>
+            <div class="row">
+                <input class="text" id="companyname" name="company" onblur="checkcompanyname()" placeholder="公司名称" required="required" type="text">
+                </input>
+            </div>
+            <div class="row">
+                <input class="text" id="email" name="email" onblur="checkmail()" placeholder="邮箱" required="required" type="text">
+                </input>
+            </div>
+            <div class="row">
+                <input class="text" id="qq" name="qq" onblur="checkqq()" placeholder="QQ" required="required" type="text">
+                </input>
+            </div>
+            <div class="row">
+                <input class="text" id="codes" onblur="validate()" placeholder="验证码" required="required" style="width: 150px" type="text">
+                <input id="code" onclick="createCode()" type="button">
+                </input>
+                </input>
+            </div>
+            <div class="row tips">
+                <input id="checkBox" type="checkbox">
+                <label>
+                    我已阅读并同意
+                    <a href="#">
+                        隐私政策、服务条款
+                    </a>
+                </label>
+                </input>
+            </div>
+            <div class="row">
+                <div id="login_click">
+                    <input type="submit" value="注 册">
+                    </input>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
