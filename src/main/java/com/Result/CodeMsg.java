@@ -41,12 +41,6 @@ public class CodeMsg {
         this.msg = msg;
     }
 
-    public CodeMsg fillArgs(Object... args) {
-        int code = this.code;
-        String message = String.format(this.msg, args);
-        return new CodeMsg(code, message);
-    }
-
     @Override
     public String toString() {
         return "CodeMsg [code=" + code + ", msg=" + msg + "]";

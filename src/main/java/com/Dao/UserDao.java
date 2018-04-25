@@ -3,15 +3,17 @@ package com.Dao;
 import com.domain.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserDao {
 
-    @Select("select * from user where id = #{id}")
-    public User getById(@Param("id") int id);
+    /**
+     *添加用户
+     * @Param User 用户实体类
+     * @return 执行成功的条数
+     */
+    @Insert("insert into market_user(telephone, email, password, salt, name, company, qq) values(#{telephone}, " +
+            "#{email}, #{password}, #{salt}, #{name}, #{company}, #{qq})")
+    public int addUser(User user);
 
-    @Insert("insert into user values ()")
-    public int insert(User user);
 }

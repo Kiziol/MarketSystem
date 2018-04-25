@@ -1,0 +1,88 @@
+.registerbody {
+	background: #C6E2FF;
+}
+
+.registerbox {
+	width: 400px;
+	margin: 50px auto 100px auto;
+}
+
+.title h2 {
+	color: #666666;
+	padding: 0 20px;
+	line-height: 50px;
+	font-size: 16px;
+	border-bottom: 1px solid #F2F2F2;
+}
+
+.content {
+	background: #FFFFFF;
+	height: auto !important;
+	min-height: 100px;
+	height: 100px;
+	font-size: 14px;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	padding-bottom: 20px;
+}
+
+.row {
+	width: 330px;
+	margin: 0 auto;
+	padding: 10px;
+	position: relative;
+}
+
+.text {
+	background-image: none;
+	padding: 0 15px;
+	width: 300px;
+	height: 40px;
+	line-height: 34px;
+}
+
+.tips {
+	padding: 5px 0;
+	height: 25px;
+	font-size: 14px;
+}
+
+.span {
+	float: right;
+	font-size: 14px;
+	font-family: "Hannotate SC";
+}
+
+#code {
+	width: 120px;
+	height: 44px;
+	float: right;
+	font-size: 32px;
+}
+
+#login_click input {
+	width:130px;
+	margin-top: 8px;
+	margin-left:100px;
+	height: 40px;
+	text-decoration: none;
+	background:#87CEFA;
+	color: #f2f2f2;
+	padding: 5px 30px 10px 30px;
+	font-size: 24px;
+	font-family: 微软雅黑, 宋体, Arial, Helvetica, Verdana, sans-serif;
+	font-weight: bold;
+	border-radius: 3px;
+	-webkit-transition: all linear 0.30s;
+	-moz-transition: all linear 0.30s;
+	transition: all linear 0.30s;
+}
+
+#login_click input:hover {
+	background: #385f9e;
+}
+
+.account{
+	text-align: left;
+	font-size:14px;
+}
