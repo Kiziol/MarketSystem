@@ -10,7 +10,11 @@ public class CodeMsg {
     public static CodeMsg SERVER_ERROR = new CodeMsg(500100, "服务端异常");
     public static CodeMsg BIND_ERROR = new CodeMsg(500101, "参数校验异常：%s");
     //登录模块 5002XX
-
+    public static CodeMsg PASSWORD_EMPTY = new CodeMsg(500201, "密码不能为空");
+    public static CodeMsg TELEPHONE_EMPTY = new CodeMsg(500202, "手机号不能为空");
+    public static CodeMsg TELEPHONE_ERROR = new CodeMsg(500203, "手机号格式错误");
+    public static CodeMsg TELEPHONE_NOT_EXIST = new CodeMsg(500204, "手机号码不存在");
+    public static CodeMsg PASSWORD_ERROR = new CodeMsg(500205, "密码错误");
     //商品模块 5003XX
 
     //订单模块 5004XX

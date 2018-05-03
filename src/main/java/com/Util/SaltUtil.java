@@ -8,6 +8,11 @@ public class SaltUtil {
         return (int)Math.round((Math.random() * len));
     }
 
+    /**
+     * 随机生成第二次加密使用的salt
+     * @param length salt的长度
+     * @return salt字符串
+     */
     public static String getSalt(int length) {
         StringBuffer sb = new StringBuffer();
         int len = str.length();
@@ -16,5 +21,4 @@ public class SaltUtil {
         }
         return sb.toString();
     }
-
 }

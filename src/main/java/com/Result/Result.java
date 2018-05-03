@@ -36,7 +36,6 @@ public class Result<T> {
         }
     }
 
-
     public int getCode() {
         return code;
     }

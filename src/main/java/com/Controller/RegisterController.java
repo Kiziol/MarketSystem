@@ -21,6 +21,11 @@ public class RegisterController {
     @RequestMapping(value = "register", method = RequestMethod.POST)
     public String registerSubmit(User user) {
         userService.addUser(user);
-        return "hello";
+        return "login";
+    }
+
+    @RequestMapping("toLogin")
+    public String toLogin() {
+        return "login";
     }
 }

@@ -6,14 +6,12 @@ public class User {
     private Long telephone;
     private String password;
     private String name;
-    private String company;
     private String email;
     private String qq;
     private String salt;
     private Date registerDate;
     private Date lastLoginDate;
     private Integer loginCount;
-    private int status;
 
     public Long getTelephone() {
         return telephone;
@@ -37,14 +35,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
     }
 
     public String getEmail() {
@@ -95,28 +85,18 @@ public class User {
         this.loginCount = loginCount;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "telephone=" + telephone +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
-                ", company='" + company + '\'' +
                 ", email='" + email + '\'' +
                 ", qq='" + qq + '\'' +
                 ", salt='" + salt + '\'' +
                 ", registerDate=" + registerDate +
                 ", lastLoginDate=" + lastLoginDate +
                 ", loginCount=" + loginCount +
-                ", status=" + status +
                 '}';
     }
 }

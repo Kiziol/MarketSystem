@@ -1,91 +1,95 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>注册页面</title>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <link th:href="@{/image/favicon1.ico}" rel="shortcut icon" type="images/x-icon"/>
-    <link th:href="@{/css/register.css}" rel="stylesheet" type="text/css"/>
-    <script th:src="@{/js/register.js}" type="text/javascript">
-    </script>
-    </meta>
+    <meta charset="utf-8"></meta>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <title>
+        注册
+    </title>
 </head>
-<body class="registerbody">
-<div class="registerbox">
-    <div class="content">
-        <div class="title">
-            <h2>
-                注册
-                <span class="span" id="mistake">
-                        </span>
-                <div class="account">
-                    已有账号，去
-                    <a href="#">
-                        登录
-                    </a>
-                </div>
-            </h2>
-        </div>
-        <form id="registerform" th:action="@{/register}" method="post">
-            <div class="row">
-                <input class="text" id="phone" name="telephone" onblur="checkphone()" placeholder="手机号"
-                       required="required" type="text">
-                </input>
-            </div>
-            <div class="row">
-                <input class="text" id="password" name="password" onblur="checkpass()" placeholder="密码"
-                       required="required" type="password">
-                </input>
-            </div>
-            <div class="row">
-                <input class="text" id="Rpassword" name="Rpassword" onblur="checkrpass()" placeholder="确认密码"
-                       required="required" type="password">
-                </input>
-            </div>
-            <div class="row">
-                <input class="text" id="username" name="name" onblur="checkname()" placeholder="联系人" required="required"
-                       type="text">
-                </input>
-            </div>
-            <div class="row">
-                <input class="text" id="companyname" name="company" onblur="checkcompanyname()" placeholder="公司名称"
-                       required="required" type="text">
-                </input>
-            </div>
-            <div class="row">
-                <input class="text" id="email" name="email" onblur="checkmail()" placeholder="邮箱" required="required"
-                       type="text">
-                </input>
-            </div>
-            <div class="row">
-                <input class="text" id="qq" name="qq" onblur="checkqq()" placeholder="QQ" required="required"
-                       type="text">
-                </input>
-            </div>
-            <div class="row">
-                <input class="text" id="codes" onblur="validate()" placeholder="验证码" required="required"
-                       style="width: 150px" type="text">
-                <input id="code" onclick="createCode()" type="button">
-                </input>
-                </input>
-            </div>
-            <div class="row tips">
-                <input id="checkBox" type="checkbox">
-                <label>
-                    我已阅读并同意
-                    <a href="#">
-                        隐私政策、服务条款
-                    </a>
+<body>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3" id="form-container">
+        <h1 class="text-center">
+            用 户 注 册
+        </h1>
+        <form th:action="@{/register}" class="form-inline" method="post" onsubmit="return checkRegister()" role="form">
+            <div class="form-group" style="padding-bottom: 8px;">
+                <label class="col-md-6 text-center" for="telephone">
+                    手 机 号 :
                 </label>
-                </input>
-            </div>
-            <div class="row">
-                <div id="login_click">
-                    <input type="submit" value="注 册">
-                    </input>
+                <div class="col-md-6">
+                    <input class="form-control" id="telephone" name="telephone" onblur="checkPhone()" required="true" type="text"/>
+                    <p id="telephoneError" style="margin-bottom: -2px;color: red;">
+                    </p>
                 </div>
+            </div>
+            <div class="form-group" style="padding-bottom: 8px;">
+                <label class="col-md-6 text-center" for="password">
+                    密      码 :
+                </label>
+                <div class="col-md-6">
+                    <input class="form-control" id="password" name="password" onblur="checkPassword()" required="true" type="password"/>
+                    <p id="passwordError" style="margin-bottom: -2px;color: red;">
+                    </p>
+                </div>
+            </div>
+            <div class="form-group" style="padding-bottom: 8px;">
+                <label class="col-md-6 text-center" for="rePassword">
+                    重复密码:
+                </label>
+                <div class="col-md-6">
+                    <input class="form-control" id="rePassword" name="rePassword" onblur="checkrePassword()" required="true" type="password"/>
+                    <p id="rePasswordError" style="margin-bottom: -2px;color: red;">
+                    </p>
+                </div>
+            </div>
+            <div class="form-group" style="padding-bottom: 8px;">
+                <label class="col-md-6 text-center" for="name">
+                    联 系 人 :
+                </label>
+                <div class="col-md-6">
+                    <input class="form-control" id="name" name="name" onblur="checkName()" required="true" type="text"/>
+                    <p id="nameError" style="margin-bottom: -2px;color: red;">
+                    </p>
+                </div>
+            </div>
+            <div class="form-group" style="padding-bottom: 8px;">
+                <label class="col-md-6 text-center" for="email">
+                    邮      箱 :
+                </label>
+                <div class="col-md-6">
+                    <input class="form-control" id="email" name="email" onblur="checkEmail()" required="true" type="text"/>
+                    <p id="emailError" style="margin-bottom: -2px;color: red;">
+                    </p>
+                </div>
+            </div>
+            <div class="form-group" style="padding-bottom: 18px;">
+                <label class="col-md-6 text-center" for="qq">
+                    Q       Q :
+                </label>
+                <div class="col-md-6">
+                    <input class="form-control" id="qq" name="qq" onblur="checkQQ()" required="true" type="text"/>
+                    <p id="qqError" style="margin-bottom: -2px;color: red;">
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6" style="margin-bottom: 8px">
+                <input class="btn btn-primary btn-block" type="submit" th:value="注册"/>
+
+            </div>
+            <div class="col-lg-6" style="margin-bottom: 18px">
+                <a class="btn btn-primary btn-block" th:href="@{/toLogin}">
+                    已有账号
+                </a>
             </div>
         </form>
     </div>
 </div>
 </body>
+<script th:src="@{/js/jquery-3.3.1.js}" type="text/javascript">
+</script>
+<script th:src="@{/js/common.js}" type="text/javascript">
+</script>
 </html>
