@@ -7,7 +7,6 @@
     <title>
         登录
     </title>
-
 </head>
 <body>
 <div class="container">
@@ -43,7 +42,7 @@
                     </button>
                 </div>
                 <div class="col-md-3 col-md-offset-3">
-                    <a class="btn btn-primary btn-lg" th:href="@{register.html}">
+                    <a class="btn btn-primary btn-lg" th:href="@{/toRegister}">
                         注册
                     </a>
                 </div>
@@ -78,14 +77,20 @@
         var str = "" + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt;
         var password = md5(str);
         $.ajax({
-           url:"/do_login",
+           url:"/doLogin",
             type:"POST",
             data:{
                 telephone:$('#telephone').val(),
                 password:password
             },
             success:function (data) {
-                console.log(data);
+               console.log(data);
+               if(data.code == 0) {
+                   layer.msg("成功");
+                   window.location.href="/goods/toList";
+               } else {
+                   layer.msg(data.msg);
+               }
             },
             error:function () {
 

@@ -3,15 +3,15 @@ package com.domain;
 import java.util.Date;
 
 public class User {
-    private Long telephone;
-    private String password;
-    private String name;
-    private String email;
+    private Long telephone;//手机号
+    private String password;//密码
+    private String name;//名字
+    private String email;//邮箱
     private String qq;
     private String salt;
-    private Date registerDate;
-    private Date lastLoginDate;
-    private Integer loginCount;
+    private Date registerDate;//注册时间
+    private Date lastLoginDate;//最后登录日期
+    private Integer loginCount;//登录次数
 
     public Long getTelephone() {
         return telephone;

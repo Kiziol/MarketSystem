@@ -3,49 +3,49 @@
   "groups": [
     {
       "sourceType": "com.Redis.RedisConfig",
-      "name": "spring.redis",
+      "name": "redis",
       "type": "com.Redis.RedisConfig"
     }
   ],
   "properties": [
     {
       "sourceType": "com.Redis.RedisConfig",
-      "name": "spring.redis.host",
+      "name": "redis.host",
       "type": "java.lang.String"
     },
     {
       "sourceType": "com.Redis.RedisConfig",
-      "name": "spring.redis.password",
+      "name": "redis.password",
       "type": "java.lang.String"
     },
     {
       "sourceType": "com.Redis.RedisConfig",
       "defaultValue": 0,
-      "name": "spring.redis.pool-max-idle",
+      "name": "redis.pool-max-idle",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "com.Redis.RedisConfig",
       "defaultValue": 0,
-      "name": "spring.redis.pool-max-total",
+      "name": "redis.pool-max-total",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "com.Redis.RedisConfig",
       "defaultValue": 0,
-      "name": "spring.redis.pool-max-wait",
+      "name": "redis.pool-max-wait",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "com.Redis.RedisConfig",
       "defaultValue": 0,
-      "name": "spring.redis.port",
+      "name": "redis.port",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "com.Redis.RedisConfig",
       "defaultValue": 0,
-      "name": "spring.redis.timeout",
+      "name": "redis.timeout",
       "type": "java.lang.Integer"
     }
   ]

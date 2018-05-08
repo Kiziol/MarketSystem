@@ -5,13 +5,13 @@ import com.Result.Result;
 import com.Service.UserService;
 import com.Util.ValidatorUtil;
 import com.Vo.LoginVo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.util.StringUtils;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class LoginController {
@@ -19,11 +19,9 @@ public class LoginController {
     @Autowired
     UserService userService;
 
-    private static Logger log = LoggerFactory.getLogger(LoginController.class);
-
-    @RequestMapping("/do_login")
+    @RequestMapping("/doLogin")
     @ResponseBody
-    public Result<Boolean> doLogin(LoginVo loginVo) {
+    public Result<Boolean> doLogin(HttpServletRequest request, LoginVo loginVo) {
         //参数校验
         String passInput = loginVo.getPassword();
         String telephone = loginVo.getTelephone().toString();
@@ -37,11 +35,16 @@ public class LoginController {
             return Result.error(CodeMsg.TELEPHONE_ERROR);
         }
         //登录
-        CodeMsg codeMsg = userService.login(loginVo);
+        CodeMsg codeMsg = userService.login(request, loginVo);
         if(codeMsg.getCode() == 0) {
             return Result.success(true);
         } else {
             return Result.error(codeMsg);
         }
+    }
+
+    @RequestMapping("/toRegister")
+    public String toRegister() {
+        return "register";
     }
 }

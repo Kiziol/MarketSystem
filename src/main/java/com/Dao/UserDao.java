@@ -18,6 +18,11 @@ public interface UserDao {
             "#{email}, #{password}, #{salt}, #{name}, #{qq})")
     public int addUser(User user);
 
+    /**
+     * 根据手机号查询用户
+     * @param telephone long类型的手机号
+     * @return User实体类
+     */
     @Select("select * from market_user where telephone = #{telephone}")
     public User getByTelephone(@Param("telephone") long telephone);
 }

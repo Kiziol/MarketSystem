@@ -59,4 +59,5 @@ public class Result<T> {
     public void setData(T data) {
         this.data = data;
     }
+
 }

@@ -1,7 +1,11 @@
 package com.Vo;
 
+import javax.validation.constraints.NotNull;
+
 public class LoginVo {
+
     private Long telephone;
+
     private String password;
 
     public Long getTelephone() {

@@ -16,3 +16,38 @@ label {
 	font-family:"微软雅黑";
 	font-size: 20px;
 }
+/*
+ * 顶部导航栏
+ */
+.strip{
+	background:#FF9900;
+	height:25px;
+	position:relative;
+	margin-bottom: 50px;
+}
+.top-menu{
+	text-align:center;
+	position: absolute;
+	z-index: 999;
+	width:100%;
+	top:25px;
+	left: 0;
+	font-size: 15px;
+}
+.top-menu ul li{
+	display:inline-block;
+	margin:-2px;
+}
+.top-menu ul li a{
+	padding:1em 2em;
+	color:#fff;
+	display:block;
+	background:#146EB4;
+	text-decoration:none;
+}
+.top-menu ul li.active a{
+	background:#FF9900;
+}
+.top-menu ul li a:hover{
+	background:#FF9900;
+}
