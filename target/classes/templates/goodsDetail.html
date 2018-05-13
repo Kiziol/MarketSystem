@@ -13,11 +13,11 @@
         <div class="top-menu">
             <span class="menu"> </span>
             <ul>
-                <li class="active"><a href="">Home</a></li>
+                <li class="active"><a th:href="@{/home}">Home</a></li>
                 <li><a href="">About Us</a></li>
-                <li><a href="">Shop Online</a></li>
+                <li><a th:href="@{/shopping}">Shop Online</a></li>
                 <li><a th:href="@{/goods/toList}">秒杀商品</a></li>
-                <li><a href="">Service</a></li>
+                <li><a th:href="@{/contact}">Contact</a></li>
                 <div class="clearfix"></div>
             </ul>
         </div>
@@ -34,7 +34,7 @@
     <!--topheader ends-->
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h1 class="panel-title">秒杀商品列表</h1>
+            <h1 class="panel-title">秒杀详情列表</h1>
         </div>
         <div class="panel-body">
             <table class="table" style="font-size: 30px;">

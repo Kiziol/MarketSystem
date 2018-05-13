@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Contact</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" ></script>
+</head>
+<body>
+<!--topheader starts-->
+<div class="strip">
+    <div class="top-menu">
+        <span class="menu"> </span>
+        <ul>
+            <li class="active"><a th:href="@{/home}">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a th:href="@{/shopping}">Shop Online</a></li>
+            <li><a th:href="@{/goods/toList}">秒杀商品</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
+            <div class="clearfix"></div>
+        </ul>
+    </div>
+    <!-- script-for-nav -->
+    <script>
+        $( "span.menu" ).click(function() {
+            $( ".top-menu ul" ).slideToggle( "slow", function() {
+                // Animation complete.
+            });
+        });
+    </script>
+    <!-- script-for-nav -->
+</div>
+<!--topheader ends-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>
+                    Contact
+                </h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">
+                            Name
+                        </label>
+                        <input class="form-control" id="name" placeholder="Enter Name" type="name">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            Email
+                        </label>
+                        <input class="form-control" id="email" placeholder="Enter Email" name="email">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">
+                            Phone
+                        </label>
+                        <input class="form-control" id="phone" placeholder="Enter Phone" name="phone">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">
+                            Message
+                        </label>
+                        <textarea class="form-control" rows="5" id="message">
+                                </textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">
+                        Send
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-6" style="padding-top: 50px;">
+                <h3 >
+                    地址：
+                </h3>
+                <p>
+                    浙江省杭州市临安区武肃街666号浙江农林大学
+                </p>
+                <p>
+                    邮编：311300
+                </p>
+                <p>
+                    电话：0571-63748780
+                </p>
+                <p>
+                    传真：0571-63732723
+                </p>
+                <img th:src="@{/images/logo.jpg}" style="width: 300px;"></img>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

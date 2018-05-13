@@ -24,8 +24,4 @@ public class RegisterController {
         return "login";
     }
 
-    @RequestMapping("toLogin")
-    public String toLogin() {
-        return "login";
-    }
 }

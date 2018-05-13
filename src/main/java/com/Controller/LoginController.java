@@ -19,6 +19,11 @@ public class LoginController {
     @Autowired
     UserService userService;
 
+    @RequestMapping("login")
+    public String loginForm() {
+        return "login";
+    }
+
     @RequestMapping("/doLogin")
     @ResponseBody
     public Result<Boolean> doLogin(HttpServletRequest request, LoginVo loginVo) {
@@ -43,8 +48,4 @@ public class LoginController {
         }
     }
 
-    @RequestMapping("/toRegister")
-    public String toRegister() {
-        return "register";
-    }
 }

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"></meta>
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
     <title>
         注册
@@ -79,11 +79,20 @@
                 <input class="btn btn-primary btn-block" type="submit" th:value="注册"/>
 
             </div>
+            <!--
             <div class="col-lg-6" style="margin-bottom: 18px">
                 <a class="btn btn-primary btn-block" th:href="@{/toLogin}">
                     已有账号
                 </a>
             </div>
+            -->
+
+            <div class="col-lg-6" style="margin-bottom: 18px">
+                <a class="btn btn-primary btn-block" href="login.html">
+                    已有账号
+                </a>
+            </div>
+
         </form>
     </div>
 </div>

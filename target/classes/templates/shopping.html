@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>商品列表页面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/shop.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" ></script>
+</head>
+<body>
+<!--topheader starts-->
+<div class="strip">
+    <div class="top-menu">
+        <span class="menu"> </span>
+        <ul>
+            <li class="active"><a th:href="@{/home}">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a th:href="@{/shopping}">Shop Online</a></li>
+            <li><a th:href="@{/goods/toList}">秒杀商品</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
+            <div class="clearfix"></div>
+        </ul>
+    </div>
+    <!-- script-for-nav -->
+    <script>
+        $( "span.menu" ).click(function() {
+            $( ".top-menu ul" ).slideToggle( "slow", function() {
+                // Animation complete.
+            });
+        });
+    </script>
+    <!-- script-for-nav -->
+</div>
+<!--topheader ends-->
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1 class="panel-title">商品列表</h1>
+    </div>
+    <div class="panel-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sidebar_men">
+                        <h3>
+                            手机品牌
+                        </h3>
+                        <ul class="categories color">
+                            <li class="line3">
+                                <a href="samsung.html">
+                                    三星(SAMSUNG)
+                                </a>
+                                <span class="count">
+                            (14)
+                        </span>
+                            </li>
+                            <li class="line3">
+                                <a href="apple.html">
+                                    苹果(APPLE)
+                                </a>
+                                <span class="count">
+                            (2)
+                        </span>
+                            </li>
+                            <li class="line3">
+                                <a href="vivo.html">
+                                    VIVO
+                                </a>
+                                <span class="count">
+                            (2)
+                        </span>
+                            </li>
+                            <li class="line3">
+                                <a href="oppo.html">
+                                    OPPO
+                                </a>
+                                <span class="count">
+                            (8)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="mi.html">
+                                    小米(MI)
+                                </a>
+                                <span class="count">
+                            (11)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="huawei.html">
+                                    华为(HUAWEI)
+                                </a>
+                                <span class="count">
+                            (3)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    魅族(MEIZU)
+                                </a>
+                                <span class="count">
+                            (3)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    荣耀(HONOR)
+                                </a>
+                                <span class="count">
+                            (6)
+                        </span>
+                            </li>
+                            <li class="line3">
+                                <a href="#">
+                                    努比亚(NUBIA)
+                                </a>
+                                <span class="count">
+                            (13)
+                        </span>
+                            </li>
+                        </ul>
+                        <h3>
+                            颜色
+                        </h3>
+                        <ul class="categories color">
+                            <li>
+                                <a href="#">
+                                    黑 色
+                                </a>
+                                <span class="count">
+                            (14)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    金 色
+                                </a>
+                                <span class="count">
+                            (8)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    白 色
+                                </a>
+                                <span class="count">
+                            (2)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    红 色
+                                </a>
+                                <span class="count">
+                            (2)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    蓝 色
+                                </a>
+                                <span class="count">
+                            (8)
+                        </span>
+                            </li>
+                        </ul>
+                        <h3>
+                            尺寸
+                        </h3>
+                        <ul class="categories color">
+                            <li>
+                                <a href="#">
+                                    4 - 5英寸
+                                </a>
+                                <span class="count">
+                            300tons
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    5 - 6英寸
+                                </a>
+                                <span class="count">
+                            200tons
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    6英寸以上
+                                </a>
+                                <span class="count">
+                            100tons
+                        </span>
+                            </li>
+                        </ul>
+                        <h3>
+                            价格
+                        </h3>
+                        <ul class="categories">
+                            <li class="line3">
+                                <a href="#">
+                                    1000-2000
+                                </a>
+                                <span class="count">
+                            (14)
+                        </span>
+                            </li>
+                            <li class="line3">
+                                <a href="#">
+                                    2000-3000
+                                </a>
+                                <span class="count">
+                            (2)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    3000-4000
+                                </a>
+                                <span class="count">
+                            (2)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    4000-5000
+                                </a>
+                                <span class="count">
+                            (8)
+                        </span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    5000以上
+                                </a>
+                                <span class="count">
+                            (11)
+                        </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--topheader ends-->
+                <!-- Products Page Starts Here -->
+                <div class="col-md-8 ">
+                    <div class="bar">
+                        <ul class="head">
+                            <li>
+                                <a href="#">
+                                    主页
+                                </a>
+                                <span>
+                            ::
+                        </span>
+                            </li>
+                            <li class="active-page">
+                                手机
+                            </li>
+                            <div class="clear">
+                            </div>
+                        </ul>
+                        <div class="products-row">
+                            <h3>
+                                今日产品
+                            </h3>
+                            <a href="single.html">
+                                <div class="grid ">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go">
+                                        <img alt="" src="images/HUAWEIP20.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(华为 P20)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                4288元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid ">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/IPHONEX.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(IPHONEX)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                7788元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/VIVOX21.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(VIVO X21)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                3198元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/MIX2.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(小米 MIX2)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                3099元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid ">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/IPHONE8.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(IPHONE8)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                4688元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/SAMSUNGS8.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(三星 S8)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                4999元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/SAMSUNGC8.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(三星 C8)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                1999元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/OPPOR15.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(OPPO R15)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                2999元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid ">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/HONOR10.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(荣耀 10)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                2599元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid ">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/NUBIAV18.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(努比亚 V18)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                1299元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid ">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/MEIZUNOTE6.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(魅族 NOTE6)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                1299元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="single.html">
+                                <div class="grid ">
+                                    <div class="more">
+                                <span>
+                                </span>
+                                    </div>
+                                    <div class="img stripe go ">
+                                        <img alt="" src="images/HUAWEIP10.jpg">
+                                        <div class="wrapper">
+                                            <h4 class="animate left shoponline">
+                                                <a class="btns" href="single.html">
+                                                    立即购买
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        </img>
+                                    </div>
+                                    <div class="information">
+                                        <div class="cust">
+                                            <a href="single.html">
+                                                详情(华为 P10)
+                                            </a>
+                                        </div>
+                                        <div class="price">
+                                            <a href="single.html">
+                                                2388元
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+            <div class="clearfix">
+            </div>
+            <li class="line3">
+            </li>
+        </div>
+    </div>
+</div>
+</body>
+</html>

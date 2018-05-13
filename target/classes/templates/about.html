@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>关于我们</title>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/about.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery-3.3.1.js}" ></script>
+</head>
+<body>
+<!--topheader starts-->
+<div class="strip">
+    <div class="top-menu">
+        <span class="menu"> </span>
+        <ul>
+            <li class="active"><a th:href="@{/home}">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a th:href="@{/shopping}">Shop Online</a></li>
+            <li><a th:href="@{/goods/toList}">秒杀商品</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
+            <div class="clearfix"></div>
+        </ul>
+    </div>
+    <!-- script-for-nav -->
+    <script>
+        $( "span.menu" ).click(function() {
+            $( ".top-menu ul" ).slideToggle( "slow", function() {
+                // Animation complete.
+            });
+        });
+    </script>
+    <!-- script-for-nav -->
+</div>
+<!--topheader ends-->
+<div class = "about-container">
+
+    <div class="col-md-5" >
+        <img src="images/thumb.jpg" class="img-thumbnail" alt="" ></img>
+    </div>
+    <div class = "col-md-7" >
+        <div class = "col-md-8">
+            <pre style="font-size: 18px ;border:dashed 1px white; background-color:white; ">
+             小组成员：沈浩
+
+             我就找一个老头推到
+
+             扶起来，再推到
+
+             再扶起来，再推到
+
+             你有能耐去整几块切糕啊
+            </pre>
+        </div>
+        <div class = "col-md-4"></div>
+        <div class = "col-md-8"></div>
+        <div class = "col-md-4">
+            <div class="button purple" onclick= "window.open('#','','width=1400,height=1400')">
+                <div class="shine">
+                </div>read more
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-5" >
+        <img src="images/thumb.jpg" class="img-thumbnail" alt="" ></img>
+    </div>
+    <div class = "col-md-7" >
+        <div class = "col-md-8">
+			<pre style="font-size: 18px ;border:dashed 1px white; background-color:white; ">
+		     小组成员：毛宏晖
+
+             我就找一个老头推到
+
+             扶起来，再推到
+
+             再扶起来，再推到
+
+             你有能耐去整几块切糕啊
+			</pre>
+        </div>
+        <div class = "col-md-4"></div>
+        <div class = "col-md-8"></div>
+        <div class = "col-md-4">
+            <div class="button purple" onclick= "window.open('#','','width=1400,height=1400')">
+                <div class="shine">
+                </div>read more
+            </div>
+        </div>
+
+    </div>
+
+    <br/><br/><br/>
+
+    <div class="col-md-5" >
+        <img src="images/thumb.jpg" class="img-thumbnail" alt="" ></img>
+    </div>
+    <div class = "col-md-7">
+        <div class = "col-md-8">
+			<pre style="font-size: 18px ;border:dashed 1px white; background-color:white; ">
+             小组成员：葛中其
+
+             我就找一个老头推到
+
+             扶起来，再推到
+
+             再扶起来，再推到
+
+             你有能耐去整几块切糕啊
+			</pre>
+        </div>
+        <div class = "col-md-4"></div>
+        <div class = "col-md-8"></div>
+        <div class = "col-md-4">
+            <div class="button purple" onclick= "window.open('#','','width=1400,height=1400')">
+                <div class="shine">
+                </div>read more
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-5">
+        <img src="images/thumb.jpg" class="img-thumbnail" alt="" ></img>
+    </div>
+    <div class = "col-md-7" >
+        <div class = "col-md-8">
+			<pre style="font-size: 18px ;border:dashed 1px white; background-color:white; ">
+		     小组成员：吴川
+
+             我就找一个老头推到
+
+             扶起来，再推到
+
+             再扶起来，再推到
+
+             你有能耐去整几块切糕啊
+			</pre>
+        </div>
+        <div class = "col-md-4"></div>
+        <div class = "col-md-8"></div>
+        <div class = "col-md-4">
+            <div class="button purple" onclick= "window.open('#','','width=1400,height=1400')">
+                <div class="shine">
+                </div>read more
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
